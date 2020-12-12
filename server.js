@@ -34,6 +34,6 @@ const server = http.createServer((req, res) => {
     }
 });
 
-app.listen(PORT, function(){
+server.listen(PORT, function(){
     console.log("Express server is running on port " + PORT)
 })
