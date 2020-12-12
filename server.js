@@ -1,7 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const hostname = '127.0.0.1';
+// const hostname = '127.0.0.1';
 const PORT = process.env.PORT || 5000;
 const server = http.createServer((req, res) => {
     if(req.url === '/'){
@@ -34,6 +34,6 @@ const server = http.createServer((req, res) => {
     }
 });
 
-server.listen(PORT, hostname, () => {
-    console.log(`Server running at http://${hostname}:${PORT}/`)
-});
+app.listen(PORT, function(){
+    console.log("Express server is running on port " + PORT)
+})
