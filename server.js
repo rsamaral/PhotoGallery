@@ -20,13 +20,13 @@ const server = http.createServer((req, res) => {
     } else if(req.url.match('\.css$')){
         var cssPath = path.join(__dirname, 'public', req.url);
         var fileStream = fs.createReadStream(cssPath, 'UTF-8');
-        res.write('Content-Type', 'text/css');
+        res.setHeader('Content-Type', 'text/css');
         fileStream.pipe(res);
     
     } else if(req.url.match('\.png$')){
         var imagePath = path.join(__dirname, 'public', req.url);
         var fileStream = fs.createReadStream(imagePath);
-        res.write('Content-Type', 'image/png');
+        res.setHeader('Content-Type', 'image/png');
         fileStream.pipe(res);
     } else {
         res.statusCode = 404;
